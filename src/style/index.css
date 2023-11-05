@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.e-content.e-lib.e-touch .e-item {
+  @apply hidden;
+}
+
+.e-content.e-lib.e-touch .e-item.e-active {
+  @apply block;
+}
+
+.e-hscroll-content{
+    @apply flex space-x-0.5;
+}
+.e-hscroll-content .e-toolbar-item{
+    @apply border-b-2 border-gray-800 py-2 px-3 text-gray-550 text-sm font-light;
+}
+.e-hscroll-content .e-toolbar-item.e-active{
+    @apply border-secondary text-gray-100 font-semibold !important;
+}

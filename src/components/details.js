@@ -1,7 +1,6 @@
-import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import { React } from "react";
 
-function Details(props) {
+const Details = (props) => {
   const implementationList = [
     {
       title: "Type",
@@ -92,6 +91,14 @@ function Details(props) {
             </div>
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">OCM Tags</p>
+              <div className="flex items-center space-x-3">
+                <button id="update" className="e-btn bg-green-50 rounded-full px-3 py-1 text-green-100 text-xs">
+                Strategy
+                </button>
+                <button id="update" className="e-btn bg-yellow-50 rounded-full px-3 py-1 text-green-100 text-xs">
+                Revenue
+                </button>
+              </div>
             </div>
           </div>
           <h5 className="text-gray-400 font-semibold pb-1 pt-5 tracking-wide">
@@ -111,6 +118,6 @@ function Details(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Details;

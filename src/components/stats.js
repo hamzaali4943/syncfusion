@@ -35,7 +35,7 @@ function Stats(props) {
           </div>
         ))}
       </div>
-      <ButtonComponent cssClass="sm:w-64 w-full rounded py-2 px-4 mt-4 lg:mt-0 ml-auto flex items-center justify-between bg-gray-500 border border-gray-600 text-gray-900">
+      <ButtonComponent cssClass="sm:w-64 w-full rounded py-2 px-4 mt-4 lg:mt-0 ml-auto flex items-center justify-between bg-gray-500 border border-gray-600 hover:border-gray-600 text-gray-900 shadow-none hover:shadow-none focus:shadow-none">
         <span>
           Stage 1- <b>IDEA</b>
         </span>

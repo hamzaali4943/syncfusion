@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   presets: [],
   darkMode: "media", // or 'class'
   theme: {
@@ -160,7 +160,7 @@ module.exports = {
       zinc: colors.zinc,
       neutral: colors.neutral,
       stone: colors.stone,
-      red: colors.red,
+      red: { ...colors.red, 100: "#FFD7D9", 200: "#A2191F" },
       orange: colors.orange,
       amber: colors.amber,
       yellow: { ...colors.yellow, 50: "#EAF0A780" },
@@ -170,7 +170,7 @@ module.exports = {
       teal: colors.teal,
       cyan: colors.cyan,
       sky: colors.sky,
-      blue: colors.blue,
+      blue: { ...colors.blue, 100: "#D0E2FF", 200: "#0043CE" },
       indigo: colors.indigo,
       violet: colors.violet,
       purple: colors.purple,

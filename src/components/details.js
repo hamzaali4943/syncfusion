@@ -92,10 +92,10 @@ const Details = (props) => {
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">OCM Tags</p>
               <div className="flex items-center space-x-3">
-                <button id="update" className="e-btn bg-green-50 rounded-full px-3 py-1 text-green-100 text-xs">
+                <button id="update" className="e-btn bg-green-50 hover:bg-green-50 focus:bg-green-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs">
                 Strategy
                 </button>
-                <button id="update" className="e-btn bg-yellow-50 rounded-full px-3 py-1 text-green-100 text-xs">
+                <button id="update" className="e-btn bg-yellow-50 hover:bg-yellow-50 focus:bg-yellow-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs">
                 Revenue
                 </button>
               </div>

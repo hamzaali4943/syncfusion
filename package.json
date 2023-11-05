@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-icons": "^23.1.36",
     "@syncfusion/ej2-base": "^23.1.41",
-    "@syncfusion/ej2-grids": "^23.1.43",
+    "@syncfusion/ej2-react-grids": "^23.1.43",
     "@syncfusion/ej2-react-buttons": "^23.1.43",
     "@syncfusion/ej2-react-dropdowns": "^23.1.43",
     "@syncfusion/ej2-react-navigations": "^23.1.43",

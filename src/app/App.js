@@ -24,8 +24,8 @@ function App() {
   ];
   return (
     <div className="lg:mt-20 md:mt-32 mt-40 pb-20 max-w-7xl mx-auto px-4 space-y-10">
-      <div>
-        {/* <EditableWrapper title="Impact" /> */}
+      <div className="flex flex-row-reverse">
+        <div><EditableWrapper title="" /></div>
         <Tabs tabItems={impactTabItems2} />
       </div>
       {/* <BreadCrumbs /> */}

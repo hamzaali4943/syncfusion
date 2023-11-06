@@ -1,5 +1,6 @@
 import { React,useState } from "react";
 import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
+// import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
 const Details = (props) => {
   const implementationList = [
     {
@@ -51,7 +52,11 @@ const Details = (props) => {
       </div>
       <div className="grid md:grid-cols-2 gris-cols-1 lg:gap-10 gap-5 py-4">
         <div className="md:pr-10">
-          <div className="border border-gray-600 bg-gray-200 h-56 w-full"></div>
+          {/* <div className="border border-gray-600 bg-gray-200 h-56 w-full"> */}
+          {/* <TextBoxComponent multiline={true} placeholder='Enter your address' value='Mr. Dodsworth Dodsworth, System Analyst, Studio 103, The Business Center'/> */}
+          <input className="e-input" name="input" type="text"  placeholder="Enter Details"/>
+          {/* </div> */}
+          
         </div>
         <div className="w-full md:px-4 py-1">
           <h5 className="text-gray-300 font-semibold pb-3">Team</h5>
@@ -92,7 +97,7 @@ const Details = (props) => {
                 Digital Marketing
               </p> */}
               {/* <input type="text" id="" name="" className="text-sm text-primary font-light" value="Digital Marketing"></input> */}
-              <input className="e-input" name="input" type="text"  placeholder="Enter Working Group"/>
+              <input className="e-input" name="input" type="text"  placeholder="Digital Marketing"/>
             </div>
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">OCM Tags</p>
@@ -116,7 +121,7 @@ const Details = (props) => {
                   {item.title}
                 </p>
                 {/* <p className="text-sm text-primary font-light">{item.value}</p> */}
-                <input type="text" id="" name="" className="text-sm text-primary font-light" value={item.value}></input>
+                <input className="e-input" name="input" type="text"  placeholder={item.value}/>
               </div>
             ))}
           </div>

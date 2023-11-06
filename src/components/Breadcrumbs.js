@@ -11,6 +11,7 @@ import {
 
 const BreadCrumbs = () => {
   return (
+    
     <div className="mb-20 flex flex-row flex-wrap justify-between">
       <div>
         <p className="text-xl font-light tracking-wide">

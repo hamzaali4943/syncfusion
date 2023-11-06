@@ -1,4 +1,5 @@
 import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
+import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { React } from "react";
 
 function Stats(props) {
@@ -24,6 +25,7 @@ function Stats(props) {
       value: "58%",
     },
   ];
+  const dropdownData=["Stage 1-IDEA","Stage 2-IDEA2","Stage 3-IDEA3"]
 
   return (
     <div className="lg:flex items-center justify-between">
@@ -35,12 +37,19 @@ function Stats(props) {
           </div>
         ))}
       </div>
-      <ButtonComponent cssClass="sm:w-64 w-full rounded py-2 px-4 mt-4 lg:mt-0 ml-auto flex items-center justify-between bg-gray-500 border border-gray-600 hover:border-gray-600 text-gray-900 shadow-none hover:shadow-none focus:shadow-none">
+      {/* <ButtonComponent cssClass="sm:w-64 w-full rounded py-2 px-4 mt-4 lg:mt-0 ml-auto flex items-center justify-between bg-gray-500 border border-gray-600 hover:border-gray-600 text-gray-900 shadow-none hover:shadow-none focus:shadow-none">
         <span>
           Stage 1- <b>IDEA</b>
         </span>
         <span>+</span>
-      </ButtonComponent>
+      </ButtonComponent> */}
+      {/* <DropDownListComponent id="ddlelement" dataSource={dropdownData} placeholder="Select!"/> */}
+      <select id="select" name="select" className="bg-slate-200 w-48 p-4">
+    <option value="stage1">Stage 1-IDEA</option>
+    <option value="stage2">Stage .2-IDEA</option>
+    <option value="stage3">Stage 3-IDEA</option>
+    
+  </select>
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { React } from "react";
-
+import { React,useState } from "react";
+import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
 const Details = (props) => {
   const implementationList = [
     {
@@ -39,6 +39,7 @@ const Details = (props) => {
       value: "High",
     },
   ];
+  
 
   return (
     <div className="">
@@ -55,7 +56,7 @@ const Details = (props) => {
         <div className="w-full md:px-4 py-1">
           <h5 className="text-gray-300 font-semibold pb-3">Team</h5>
           <div className="flex items-center space-x-4">
-            <div className="w-20">
+            {/* <div className="w-20">
               <p className="text-sm text-gray-700 font-light pb-1">Owner</p>
               <svg
                 width="23"
@@ -78,16 +79,20 @@ const Details = (props) => {
               >
                 <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
               </svg>
-            </div>
+            </div> */}
+            <div><RadioButtonComponent label="Owner" name="default"/></div>
+            <div><RadioButtonComponent label="Sponsor" name="default"/></div>
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-2 py-4 gap-4">
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">
                 Working Group
               </p>
-              <p className="text-sm text-primary font-light">
+              {/* <p className="text-sm text-primary font-light">
                 Digital Marketing
-              </p>
+              </p> */}
+              {/* <input type="text" id="" name="" className="text-sm text-primary font-light" value="Digital Marketing"></input> */}
+              <input className="e-input" name="input" type="text"  placeholder="Enter Working Group"/>
             </div>
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">OCM Tags</p>
@@ -110,7 +115,8 @@ const Details = (props) => {
                 <p className="text-sm text-gray-700 font-light pb-1">
                   {item.title}
                 </p>
-                <p className="text-sm text-primary font-light">{item.value}</p>
+                {/* <p className="text-sm text-primary font-light">{item.value}</p> */}
+                <input type="text" id="" name="" className="text-sm text-primary font-light" value={item.value}></input>
               </div>
             ))}
           </div>

@@ -3,6 +3,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   presets: [],
   darkMode: "media", // or 'class'
+  important: true,
   theme: {
     accentColor: ({ theme }) => ({
       ...theme("colors"),
@@ -146,6 +147,7 @@ module.exports = {
       slate: colors.slate,
       gray: {
         ...colors.gray,
+        50: "#EDEDED",
         100: "#161616",
         200: "#FCFCFC",
         300: "#3E3E3E",
@@ -155,6 +157,7 @@ module.exports = {
         600: "#C0C0C0",
         700: "#7A7A7A",
         800: "#C6C6C6",
+        850: "#8D99A1",
         900: "#989898",
       },
       zinc: colors.zinc,
@@ -165,7 +168,13 @@ module.exports = {
       amber: colors.amber,
       yellow: { ...colors.yellow, 50: "#EAF0A780" },
       lime: colors.lime,
-      green: { ...colors.green, 50: "#A7F0BA80", 100: "#0E6027" },
+      green: {
+        ...colors.green,
+        50: "#A7F0BA80",
+        100: "#0E6027",
+        200: "#369B80",
+        300: "#96C8BD",
+      },
       emerald: colors.emerald,
       teal: colors.teal,
       cyan: colors.cyan,

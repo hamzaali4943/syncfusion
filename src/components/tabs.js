@@ -13,7 +13,7 @@ const Tabs = (props) => {
   //   ];
 
   return (
-    <TabComponent height="250px">
+    <TabComponent height="250px" id={props.id}>
       <TabItemsDirective>
         {props.tabItems.map((item, index) => (
           <TabItemDirective

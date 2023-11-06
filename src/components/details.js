@@ -1,7 +1,7 @@
-import { React,useState } from "react";
-import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
-// import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
-const Details = (props) => {
+import { React, useState } from "react";
+import { RadioButtonComponent } from "@syncfusion/ej2-react-buttons";
+import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
+const Details = ({ editable }) => {
   const implementationList = [
     {
       title: "Type",
@@ -40,7 +40,10 @@ const Details = (props) => {
       value: "High",
     },
   ];
-  
+
+  const [textareaText, setTextareaText] = useState(
+    "An optional page title supplied as a string or object with the following attributes: text, icon, loading"
+  );
 
   return (
     <div className="">
@@ -52,61 +55,96 @@ const Details = (props) => {
       </div>
       <div className="grid md:grid-cols-2 gris-cols-1 lg:gap-10 gap-5 py-4">
         <div className="md:pr-10">
-          {/* <div className="border border-gray-600 bg-gray-200 h-56 w-full"> */}
-          {/* <TextBoxComponent multiline={true} placeholder='Enter your address' value='Mr. Dodsworth Dodsworth, System Analyst, Studio 103, The Business Center'/> */}
-          <input className="e-input" name="input" type="text"  placeholder="Enter Details"/>
-          {/* </div> */}
-          
+          {editable ? (
+            <TextBoxComponent
+              multiline={true}
+              rows={50}
+              placeholder="Enter text here"
+              onChange={(e) => setTextareaText(e.target.value)}
+              cssClass="w-full p-4 !border !border-gray-600 focus:outline-none focus:!border-blue-300"
+              value={textareaText}
+            />
+          ) : (
+            <p className="border border-gray-600 bg-gray-200 h-56 w-full p-6 text-base">
+              {textareaText}
+            </p>
+          )}
         </div>
         <div className="w-full md:px-4 py-1">
           <h5 className="text-gray-300 font-semibold pb-3">Team</h5>
           <div className="flex items-center space-x-4">
-            {/* <div className="w-20">
-              <p className="text-sm text-gray-700 font-light pb-1">Owner</p>
-              <svg
-                width="23"
-                height="23"
-                viewBox="0 0 23 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
-              </svg>
-            </div>
-            <div className="w-20">
-              <p className="text-sm text-gray-700 font-light pb-1">Sponsor</p>
-              <svg
-                width="23"
-                height="23"
-                viewBox="0 0 23 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
-              </svg>
-            </div> */}
-            <div><RadioButtonComponent label="Owner" name="default"/></div>
-            <div><RadioButtonComponent label="Sponsor" name="default"/></div>
+            {editable ? (
+              <>
+                <div>
+                  <RadioButtonComponent label="Owner" name="default" />
+                </div>
+                <div>
+                  <RadioButtonComponent label="Sponsor" name="default" />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="w-20">
+                  <p className="text-sm text-gray-700 font-light pb-1">Owner</p>
+                  <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
+                  </svg>
+                </div>
+                <div className="w-20">
+                  <p className="text-sm text-gray-700 font-light pb-1">
+                    Sponsor
+                  </p>
+                  <svg
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
+                  </svg>
+                </div>
+              </>
+            )}
           </div>
           <div className="grid lg:grid-cols-3 grid-cols-2 py-4 gap-4">
             <div className="">
               <p className="text-sm text-gray-700 font-light pb-1">
                 Working Group
               </p>
-              {/* <p className="text-sm text-primary font-light">
-                Digital Marketing
-              </p> */}
-              {/* <input type="text" id="" name="" className="text-sm text-primary font-light" value="Digital Marketing"></input> */}
-              <input className="e-input" name="input" type="text"  placeholder="Digital Marketing"/>
+              {editable ? (
+                <input
+                  className="e-input"
+                  name="input"
+                  type="text"
+                  placeholder="Digital Marketing"
+                />
+              ) : (
+                <p className="text-sm text-primary font-light">
+                  Digital Marketing
+                </p>
+              )}
             </div>
-            <div className="">
+            <div>
               <p className="text-sm text-gray-700 font-light pb-1">OCM Tags</p>
               <div className="flex items-center space-x-3">
-                <button id="update" className="e-btn bg-green-50 hover:bg-green-50 focus:bg-green-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs">
-                Strategy
+                <button
+                  id="update"
+                  className="e-btn bg-green-50 hover:bg-green-50 focus:bg-green-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs"
+                >
+                  Strategy
                 </button>
-                <button id="update" className="e-btn bg-yellow-50 hover:bg-yellow-50 focus:bg-yellow-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs">
-                Revenue
+                <button
+                  id="update"
+                  className="e-btn bg-yellow-50 hover:bg-yellow-50 focus:bg-yellow-50 shadow-none hover:shadow-none focus:shadow-none rounded-full px-3 py-1 text-green-100 text-xs"
+                >
+                  Revenue
                 </button>
               </div>
             </div>
@@ -120,8 +158,18 @@ const Details = (props) => {
                 <p className="text-sm text-gray-700 font-light pb-1">
                   {item.title}
                 </p>
-                {/* <p className="text-sm text-primary font-light">{item.value}</p> */}
-                <input className="e-input" name="input" type="text"  placeholder={item.value}/>
+                {editable ? (
+                  <input
+                    className="e-input"
+                    name="input"
+                    type="text"
+                    placeholder={item.value}
+                  />
+                ) : (
+                  <p className="text-sm text-primary font-light">
+                    {item.value}
+                  </p>
+                )}
               </div>
             ))}
           </div>

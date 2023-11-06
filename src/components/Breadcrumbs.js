@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BreadcrumbComponent,
   BreadcrumbItemDirective,
@@ -9,14 +9,26 @@ import {
   ChipListComponent,
 } from "@syncfusion/ej2-react-buttons";
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ editable }) => {
+  const [title, setTitle] = useState(
+    "Penetrate US market and realize 50% growth.."
+  );
+
   return (
-    
     <div className="mb-20 flex flex-row flex-wrap justify-between">
       <div>
-        <p className="text-xl font-light tracking-wide">
-          Penetrate US market and realize 50% growth..
-        </p>
+        {editable ? (
+          <input
+            className="e-input"
+            name="input"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Type here..."
+          />
+        ) : (
+          <p className="text-xl font-light tracking-wide">{title}</p>
+        )}
         <div id="breadcrumb-control" className="-ml-2">
           <BreadcrumbComponent enableNavigation={false}>
             <BreadcrumbItemsDirective>

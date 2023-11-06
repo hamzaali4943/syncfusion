@@ -2,48 +2,145 @@ import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
 import React from "react";
 
 const EditableWrapper = (props) => {
+  const {
+    className,
+    title,
+    isAdd,
+    isAddComment,
+    isShare,
+    isEdit,
+    isNotify,
+    isExpand,
+  } = props;
   return (
-    <div className="flex items-center justify-between pb-5">
-      <h2 className="text-2xl font-light text-gray-100 tracking-wide">
-        {props.title}
-      </h2>
-      <div className="flex items-center space-x-5">
-        <ButtonComponent cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none">
-          <svg
-            width="18"
-            height="19"
-            viewBox="0 0 18 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <div className={`flex items-center justify-between ${className}`}>
+      {title && (
+        <h2 className="text-2xl font-light text-gray-100 tracking-wide">
+          {title}
+        </h2>
+      )}
+      <div className="flex items-center space-x-3">
+        {isAdd && (
+          <ButtonComponent
+            onClick={isAdd}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
           >
-            <path
-              d="M9.5625 8.9375V5H8.4375V8.9375H4.5V10.0625H8.4375V14H9.5625V10.0625H13.5V8.9375H9.5625Z"
-              fill="#73828C"
-            />
-          </svg>
-        </ButtonComponent>
-        <ButtonComponent cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none">
-          <svg
-            width="18"
-            height="19"
-            viewBox="0 0 18 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            <svg
+              width="18"
+              height="19"
+              viewBox="0 0 18 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.5625 8.9375V5H8.4375V8.9375H4.5V10.0625H8.4375V14H9.5625V10.0625H13.5V8.9375H9.5625Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
+        {isAddComment && (
+          <ButtonComponent
+            onClick={isAddComment}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
           >
-            <rect
+            <svg
               width="18"
               height="18"
-              transform="translate(0 0.5)"
-              fill="white"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M14.2875 3.9875C14.7375 4.4375 14.7375 5.1125 14.2875 5.5625L5.85 14H2.25V10.4L10.6875 1.9625C11.1375 1.5125 11.8125 1.5125 12.2625 1.9625L14.2875 3.9875ZM13.5 4.775L11.475 2.75L9.7875 4.4375L11.8125 6.4625L13.5 4.775ZM3.375 10.85V12.875H5.4L11.025 7.25L9 5.225L3.375 10.85ZM1.125 16.25V15.125H16.875V16.25H1.125Z"
-              fill="#73828C"
-            />
-          </svg>
-        </ButtonComponent>
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9 16.3125L9.97875 16.875L11.9025 13.5H14.625C15.2217 13.5 15.794 13.2629 16.216 12.841C16.6379 12.419 16.875 11.8467 16.875 11.25V4.5C16.875 3.90326 16.6379 3.33097 16.216 2.90901C15.794 2.48705 15.2217 2.25 14.625 2.25H3.375C2.77826 2.25 2.20597 2.48705 1.78401 2.90901C1.36205 3.33097 1.125 3.90326 1.125 4.5V11.25C1.125 11.8467 1.36205 12.419 1.78401 12.841C2.20597 13.2629 2.77826 13.5 3.375 13.5H8.4375V12.375H3.375C3.07663 12.375 2.79048 12.2565 2.5795 12.0455C2.36853 11.8345 2.25 11.5484 2.25 11.25V4.5C2.25 4.20163 2.36853 3.91548 2.5795 3.7045C2.79048 3.49353 3.07663 3.375 3.375 3.375H14.625C14.9234 3.375 15.2095 3.49353 15.4205 3.7045C15.6315 3.91548 15.75 4.20163 15.75 4.5V11.25C15.75 11.5484 15.6315 11.8345 15.4205 12.0455C15.2095 12.2565 14.9234 12.375 14.625 12.375H11.25L9 16.3125ZM8.4375 5.0625H9.5625V7.3125H11.8125V8.4375H9.5625V10.6875H8.4375V8.4375H6.1875V7.3125H8.4375V5.0625Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
+        {isShare && (
+          <ButtonComponent
+            onClick={isShare}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.9375 11.25C12.5165 11.2521 12.1013 11.3487 11.7226 11.5327C11.3438 11.7167 11.0113 11.9834 10.7494 12.3131L6.63751 9.74249C6.78737 9.25883 6.78737 8.74115 6.63751 8.25749L10.7494 5.68687C11.1667 6.20365 11.7535 6.55603 12.4058 6.6816C13.0581 6.80716 13.7337 6.69781 14.3131 6.37291C14.8925 6.048 15.3382 5.52852 15.5712 4.90648C15.8042 4.28444 15.8096 3.6 15.5863 2.9744C15.363 2.3488 14.9255 1.82241 14.3513 1.4885C13.7771 1.15458 13.1032 1.03468 12.449 1.15004C11.7948 1.26541 11.2026 1.60858 10.7773 2.11877C10.3519 2.62897 10.1208 3.27325 10.125 3.93749C10.1277 4.18903 10.1655 4.43896 10.2375 4.67999L6.12564 7.25062C5.76262 6.79363 5.26644 6.4609 4.70586 6.29853C4.14528 6.13616 3.54807 6.1522 2.99702 6.34444C2.44597 6.53667 1.96836 6.89557 1.63041 7.37139C1.29246 7.84721 1.1109 8.41637 1.1109 8.99999C1.1109 9.58361 1.29246 10.1528 1.63041 10.6286C1.96836 11.1044 2.44597 11.4633 2.99702 11.6555C3.54807 11.8478 4.14528 11.8638 4.70586 11.7015C5.26644 11.5391 5.76262 11.2064 6.12564 10.7494L10.2375 13.32C10.1655 13.561 10.1277 13.811 10.125 14.0625C10.125 14.6188 10.29 15.1625 10.599 15.625C10.908 16.0875 11.3473 16.448 11.8612 16.6609C12.3751 16.8738 12.9406 16.9295 13.4862 16.821C14.0318 16.7124 14.5329 16.4446 14.9262 16.0512C15.3196 15.6579 15.5874 15.1568 15.696 14.6112C15.8045 14.0656 15.7488 13.5001 15.5359 12.9862C15.323 12.4723 14.9626 12.033 14.5001 11.724C14.0375 11.4149 13.4938 11.25 12.9375 11.25ZM12.9375 2.24999C13.2713 2.24999 13.5975 2.34896 13.875 2.53439C14.1525 2.71981 14.3688 2.98336 14.4966 3.29171C14.6243 3.60006 14.6577 3.93936 14.5926 4.26671C14.5275 4.59405 14.3668 4.89473 14.1308 5.13074C13.8948 5.36674 13.5941 5.52746 13.2667 5.59257C12.9394 5.65768 12.6001 5.62426 12.2917 5.49654C11.9834 5.36882 11.7198 5.15253 11.5344 4.87502C11.349 4.59751 11.25 4.27125 11.25 3.93749C11.25 3.48994 11.4278 3.06072 11.7443 2.74425C12.0607 2.42778 12.49 2.24999 12.9375 2.24999ZM3.93751 10.6875C3.60376 10.6875 3.27749 10.5885 2.99999 10.4031C2.72248 10.2177 2.50619 9.95412 2.37847 9.64577C2.25074 9.33742 2.21732 8.99812 2.28244 8.67078C2.34755 8.34343 2.50827 8.04275 2.74427 7.80675C2.98027 7.57075 3.28095 7.41003 3.6083 7.34492C3.93564 7.2798 4.27494 7.31322 4.58329 7.44095C4.89164 7.56867 5.15519 7.78496 5.34062 8.06247C5.52604 8.33998 5.62501 8.66624 5.62501 8.99999C5.62501 9.44755 5.44722 9.87677 5.13075 10.1932C4.81429 10.5097 4.38506 10.6875 3.93751 10.6875ZM12.9375 15.75C12.6038 15.75 12.2775 15.651 12 15.4656C11.7225 15.2802 11.5062 15.0166 11.3785 14.7083C11.2507 14.3999 11.2173 14.0606 11.2824 13.7333C11.3475 13.4059 11.5083 13.1053 11.7443 12.8692C11.9803 12.6332 12.281 12.4725 12.6083 12.4074C12.9356 12.3423 13.2749 12.3757 13.5833 12.5034C13.8916 12.6312 14.1552 12.8475 14.3406 13.125C14.526 13.4025 14.625 13.7287 14.625 14.0625C14.625 14.51 14.4472 14.9393 14.1308 15.2557C13.8143 15.5722 13.3851 15.75 12.9375 15.75Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
+        {isEdit && (
+          <ButtonComponent
+            onClick={isEdit}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="18" height="18" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.2875 3.4875C14.7375 3.9375 14.7375 4.6125 14.2875 5.0625L5.85 13.5H2.25V9.9L10.6875 1.4625C11.1375 1.0125 11.8125 1.0125 12.2625 1.4625L14.2875 3.4875ZM13.5 4.275L11.475 2.25L9.7875 3.9375L11.8125 5.9625L13.5 4.275ZM3.375 10.35V12.375H5.4L11.025 6.75L9 4.725L3.375 10.35ZM1.125 15.75V14.625H16.875V15.75H1.125Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
+        {isNotify && (
+          <ButtonComponent
+            onClick={isNotify}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.1477 10.8523L14.625 9.32957V7.3125C14.6232 5.9186 14.1046 4.57487 13.1695 3.54116C12.2344 2.50744 10.9492 1.85717 9.5625 1.71608V0.5625H8.4375V1.71608C7.05076 1.85717 5.76558 2.50744 4.83049 3.54116C3.89539 4.57487 3.37681 5.9186 3.375 7.3125V9.32957L1.85226 10.8523C1.74678 10.9578 1.68752 11.1008 1.6875 11.25V12.9375C1.6875 13.0867 1.74676 13.2298 1.85225 13.3352C1.95774 13.4407 2.10082 13.5 2.25 13.5H6.1875V13.9369C6.17531 14.6505 6.42685 15.3435 6.89393 15.8831C7.36102 16.4227 8.01079 16.771 8.71875 16.8612C9.10977 16.9 9.50458 16.8566 9.87779 16.7336C10.251 16.6107 10.5943 16.411 10.8857 16.1474C11.1771 15.8837 11.4101 15.5621 11.5698 15.203C11.7294 14.8439 11.812 14.4554 11.8125 14.0625V13.5H15.75C15.8992 13.5 16.0423 13.4407 16.1477 13.3352C16.2532 13.2298 16.3125 13.0867 16.3125 12.9375V11.25C16.3125 11.1008 16.2532 10.9578 16.1477 10.8523ZM10.6875 14.0625C10.6875 14.5101 10.5097 14.9393 10.1932 15.2557C9.87678 15.5722 9.44755 15.75 9 15.75C8.55245 15.75 8.12322 15.5722 7.80676 15.2557C7.49029 14.9393 7.3125 14.5101 7.3125 14.0625V13.5H10.6875V14.0625ZM15.1875 12.375H2.8125V11.4829L4.33519 9.96019C4.44068 9.85472 4.49997 9.71167 4.5 9.5625V7.3125C4.5 6.11903 4.97411 4.97443 5.81802 4.13052C6.66193 3.28661 7.80653 2.8125 9 2.8125C10.1935 2.8125 11.3381 3.28661 12.182 4.13052C13.0259 4.97443 13.5 6.11903 13.5 7.3125V9.5625C13.5 9.71167 13.5593 9.85472 13.6648 9.96019L15.1875 11.4829V12.375Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
+        {isExpand && (
+          <ButtonComponent
+            onClick={isExpand}
+            cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.25 2.25V1.125H16.875V6.75H15.75V3.04538L10.9204 7.875L10.125 7.07737L14.9546 2.25H11.25ZM7.083 10.125L7.875 10.9215L3.04538 15.75H6.75V16.875H1.125V11.25H2.25V14.9546L7.083 10.125Z"
+                fill="#73828C"
+              />
+            </svg>
+          </ButtonComponent>
+        )}
         <ButtonComponent cssClass="bg-transparent hover:bg-transparent focus:bg-transparent px-0 shadow-none focus:shadow-none hover:shadow-none">
           <svg
             width="18"
@@ -64,5 +161,13 @@ const EditableWrapper = (props) => {
     </div>
   );
 };
-
+EditableWrapper.defaultProps = {
+  className: "pb-5",
+  isAdd: true,
+  isAddComment: false,
+  isShare: false,
+  isEdit: true,
+  isNotify: false,
+  isExpand: false,
+};
 export default EditableWrapper;

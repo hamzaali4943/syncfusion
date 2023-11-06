@@ -1,6 +1,5 @@
-import { ButtonComponent } from "@syncfusion/ej2-react-buttons";
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-import { React } from "react";
+import { React, useState } from "react";
+import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 
 function Stats(props) {
   const statsList = [
@@ -25,7 +24,12 @@ function Stats(props) {
       value: "58%",
     },
   ];
-  const dropdownData=["Stage 1-IDEA","Stage 2-IDEA2","Stage 3-IDEA3"]
+  const sportsData = ["Stage 1-IDEA", "Stage 2-IDEA2", "Stage 3-IDEA3"];
+  const fields = { text: "Stage 1-IDEA", value: "Stage 1-IDEA" };
+  const [value, setValue] = useState("Stage 1-IDEA");
+  const onChange = (args) => {
+    setValue(args.itemData === null ? "null" : args.itemData[fields.value]);
+  };
 
   return (
     <div className="lg:flex items-center justify-between">
@@ -37,19 +41,16 @@ function Stats(props) {
           </div>
         ))}
       </div>
-      {/* <ButtonComponent cssClass="sm:w-64 w-full rounded py-2 px-4 mt-4 lg:mt-0 ml-auto flex items-center justify-between bg-gray-500 border border-gray-600 hover:border-gray-600 text-gray-900 shadow-none hover:shadow-none focus:shadow-none">
-        <span>
-          Stage 1- <b>IDEA</b>
-        </span>
-        <span>+</span>
-      </ButtonComponent> */}
-      {/* <DropDownListComponent id="ddlelement" dataSource={dropdownData} placeholder="Select!"/> */}
-      <select id="select" name="select" className="bg-slate-200 w-48 p-4">
-    <option value="stage1">Stage 1-IDEA</option>
-    <option value="stage2">Stage .2-IDEA</option>
-    <option value="stage3">Stage 3-IDEA</option>
-    
-  </select>
+      <DropDownListComponent
+        id="games"
+        dataSource={sportsData}
+        fields={fields}
+        change={onChange.bind(this)}
+        placeholder="Stage 1- IDEA"
+        value={value}
+        popupHeight="220px"
+        cssClass="sm:!w-64 !w-full"
+      />
     </div>
   );
 }

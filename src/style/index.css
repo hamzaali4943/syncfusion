@@ -19,13 +19,14 @@
 @import "../../node_modules/@syncfusion/ej2-notifications/styles/material.css";
 @import "../../node_modules/@syncfusion/ej2-react-grids/styles/material.css";
 @import "../../node_modules/@syncfusion/ej2-react-treegrid/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-react-inputs/styles/material.css";
 
 /* Tabs Css */
 .e-tab .e-tab-header .e-toolbar-item .e-tab-text {
-  @apply text-gray-550 text-sm font-light border-b-2 border-gray-600 pb-3.5 px-4 !important;
+  @apply text-gray-550 text-sm font-light border-b-2 border-gray-600 pb-3.5 px-4 capitalize !important;
 }
 .e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-text {
-  @apply text-gray-100 hover:text-gray-100 focus:text-gray-100 font-medium !important;
+  @apply text-gray-100 hover:text-gray-100 focus:text-gray-100 !important;
 }
 .e-tab .e-tab-header .e-indicator {
   @apply bg-secondary;
@@ -35,4 +36,34 @@
 }
 .e-tab .e-tab-header {
   @apply mb-5;
+}
+#main.e-tab .e-tab-header .e-toolbar-item .e-tab-text {
+  @apply text-gray-850 font-semibold !important;
+}
+#main.e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-text {
+  @apply text-green-200 !important;
+}
+#main.e-tab .e-tab-header:not(.e-vertical) .e-indicator {
+  @apply top-0 bg-green-300 !important;
+}
+#main.e-tab .e-tab-header .e-toolbar-item .e-tab-text{
+  padding-top: 0.875rem !important;
+}
+#main .e-tab-header{
+  @apply bg-gray-50 !important;
+}
+#impact.e-tab .e-tab-header .e-toolbar-item .e-tab-text {
+  @apply text-gray-850 font-medium !important;
+}
+#impact.e-tab .e-tab-header .e-toolbar-item.e-active .e-tab-text {
+  @apply text-gray-100 hover:text-gray-100 focus:text-gray-100 !important;
+}
+#impact.e-tab .e-tab-header:not(.e-vertical) .e-indicator {
+  @apply bottom-0 top-auto bg-secondary !important;
+}
+#impact.e-tab .e-tab-header .e-toolbar-item .e-tab-text{
+  padding-top: 0 !important;
+}
+#impact .e-tab-header{
+  @apply bg-transparent !important;
 }

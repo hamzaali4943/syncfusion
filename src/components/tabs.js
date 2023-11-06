@@ -19,7 +19,7 @@ const Tabs = (props) => {
           <TabItemDirective
             key={index}
             header={item.header}
-            content={item.content}
+            content={item?.content}
           />
         ))}
       </TabItemsDirective>

@@ -163,11 +163,11 @@ const EditableWrapper = (props) => {
 };
 EditableWrapper.defaultProps = {
   className: "pb-5",
-  isAdd: true,
-  isAddComment: false,
-  isShare: false,
-  isEdit: true,
-  isNotify: false,
-  isExpand: false,
+  isAdd: () => {},
+  isAddComment: () => {},
+  isShare: () => {},
+  isEdit: () => {},
+  isNotify: () => {},
+  isExpand: () => {},
 };
 export default EditableWrapper;

@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { RadioButtonComponent } from "@syncfusion/ej2-react-buttons";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 const Details = ({ editable }) => {
+  const [selectedOption, setSelectedOption] = useState("Owner");
   const implementationList = [
     {
       title: "Type",
@@ -45,6 +46,21 @@ const Details = ({ editable }) => {
     "An optional page title supplied as a string or object with the following attributes: text, icon, loading"
   );
 
+  const [inputValues, setInputValues] = useState(
+    implementationList.map((item) => item.value)
+  );
+  const [inputValue, setInputValue] = useState("Digital Marketing");
+
+  const handleInput = (newValue) => {
+    setInputValue(newValue);
+  };
+
+  const handleInputChange = (index, newValue) => {
+    const newInputValues = [...inputValues];
+    newInputValues[index] = newValue;
+    setInputValues(newInputValues);
+  };
+
   return (
     <div className="">
       <div className="flex items-center space-x-1">
@@ -76,29 +92,29 @@ const Details = ({ editable }) => {
             {editable ? (
               <>
                 <div>
-                  <RadioButtonComponent label="Owner" name="default" />
+                  <RadioButtonComponent
+                    label="Owner"
+                    name="radioGroup"
+                    value="Owner"
+                    checked={selectedOption === "Owner"}
+                    onChange={(e) => setSelectedOption(e.target.value)}
+                  />
                 </div>
                 <div>
-                  <RadioButtonComponent label="Sponsor" name="default" />
+                  <RadioButtonComponent
+                    label="Sponsor"
+                    name="radioGroup"
+                    value="Sponsor"
+                    checked={selectedOption === "Sponsor"}
+                    onChange={(e) => setSelectedOption(e.target.value)}
+                  />
                 </div>
               </>
             ) : (
               <>
                 <div className="w-20">
-                  <p className="text-sm text-gray-700 font-light pb-1">Owner</p>
-                  <svg
-                    width="23"
-                    height="23"
-                    viewBox="0 0 23 23"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle cx="11.5" cy="11.5" r="11.5" fill="#E1E1E1" />
-                  </svg>
-                </div>
-                <div className="w-20">
                   <p className="text-sm text-gray-700 font-light pb-1">
-                    Sponsor
+                    {selectedOption}
                   </p>
                   <svg
                     width="23"
@@ -124,11 +140,11 @@ const Details = ({ editable }) => {
                   name="input"
                   type="text"
                   placeholder="Digital Marketing"
+                  value={inputValue}
+                  onChange={(e) => handleInput(e.target.value)}
                 />
               ) : (
-                <p className="text-sm text-primary font-light">
-                  Digital Marketing
-                </p>
+                <p className="text-sm text-primary font-light">{inputValue}</p>
               )}
             </div>
             <div>
@@ -164,10 +180,13 @@ const Details = ({ editable }) => {
                     name="input"
                     type="text"
                     placeholder={item.value}
+                    value={inputValues[index]}
+                    onChange={(e) => handleInputChange(index, e.target.value)}
                   />
                 ) : (
                   <p className="text-sm text-primary font-light">
-                    {item.value}
+                    {/* {item.value} */}
+                    {inputValues[index]}
                   </p>
                 )}
               </div>

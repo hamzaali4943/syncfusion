@@ -1,6 +1,6 @@
 import { Tabs } from "../components";
 import ImpactComp from "../components/ImpactComp";
-import { useState, useEffect, useRef } from "react";
+import {  useEffect } from "react";
 
 function App() {
   const impactTabItems2 = [

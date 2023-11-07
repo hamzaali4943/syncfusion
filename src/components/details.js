@@ -62,15 +62,15 @@ const Details = ({ editable }) => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex items-center space-x-1">
         <img src="../../lock.svg" alt="lock" className="-ml-1.5" />
         <h2 className="text-2xl tracking-wide text-gray-100 font-light">
           Details
         </h2>
       </div>
-      <div className="grid md:grid-cols-2 gris-cols-1 lg:gap-10 gap-5 py-4">
-        <div className="md:pr-10">
+      <div className="grid xl:grid-cols-2 gris-cols-1 gap-5 py-4">
+        <div>
           {editable ? (
             <TextBoxComponent
               multiline={true}
@@ -81,12 +81,12 @@ const Details = ({ editable }) => {
               value={textareaText}
             />
           ) : (
-            <p className="border border-gray-600 bg-gray-200 h-56 w-full p-6 text-base">
+            <p className="border border-gray-600 bg-gray-200 h-56 w-full lg:p-6 p-3 lg:text-base text-sm">
               {textareaText}
             </p>
           )}
         </div>
-        <div className="w-full md:px-4 py-1">
+        <div className="w-full xl:px-4 py-1">
           <h5 className="text-gray-300 font-semibold pb-3">Team</h5>
           <div className="flex items-center space-x-4">
             {editable ? (
@@ -129,8 +129,8 @@ const Details = ({ editable }) => {
               </>
             )}
           </div>
-          <div className="grid lg:grid-cols-3 grid-cols-2 py-4 gap-4">
-            <div className="">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 py-4 gap-4">
+            <div>
               <p className="text-sm text-gray-700 font-light pb-1">
                 Working Group
               </p>
@@ -168,7 +168,7 @@ const Details = ({ editable }) => {
           <h5 className="text-gray-400 font-semibold pb-1 pt-5 tracking-wide">
             Implementation details
           </h5>
-          <div className="grid lg:grid-cols-3 grid-cols-2 py-4 gap-4">
+          <div className="grid lg:grid-cols-2 grid-cols-2 py-4 gap-2">
             {implementationList.map((item, index) => (
               <div key={index}>
                 <p className="text-sm text-gray-700 font-light pb-1">

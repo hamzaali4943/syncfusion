@@ -15,7 +15,7 @@ const BreadCrumbs = ({ editable }) => {
   );
 
   return (
-    <div className="mb-20 flex flex-row flex-wrap justify-between">
+    <div className="lg:mb-12 flex flex-row flex-wrap justify-between">
       <div>
         {editable ? (
           <input

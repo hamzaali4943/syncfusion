@@ -48,6 +48,7 @@
 }
 #main.e-tab .e-tab-header .e-toolbar-item .e-tab-text{
   padding-top: 0.875rem !important;
+  border-bottom: none !important;
 }
 #main .e-tab-header{
   @apply bg-gray-50 !important;

@@ -8,6 +8,7 @@ import {
   BreadCrumbs,
   Tasks,
 } from ".";
+import NewTargetData from "./newTargetData";
 
 function ImpactComp() {
   const [editable, setEditable] = useState(false);
@@ -24,14 +25,15 @@ function ImpactComp() {
   ];
 
   return (
-    <div className="p-4 relative">
+    <div className="p-2 lg:p-4 relative">
       <EditableWrapper
-        className="absolute -top-14 right-2 mt-0.5"
+        className="absolute lg:-top-14 -top-6 lg:right-2 right-0 mt-0.5 bg-gray-50"
         isEdit={() => setEditable(!editable)}
       />
-      <div className="space-y-10">
+      <div className="md:space-y-10 space-y-8">
         <BreadCrumbs editable={editable} />
         <Stats />
+        <NewTargetData editable={editable} />
         <Details editable={editable} />
         <div>
           <EditableWrapper

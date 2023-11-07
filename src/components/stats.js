@@ -9,17 +9,17 @@ function Stats(props) {
       value: "$49.2B",
     },
     {
-      className: "md:!px-4",
+      className: "",
       title: "Sales Order Items",
       value: "2.61M",
     },
     {
-      className: "md:!px-4 border-r border-t md:border-0",
+      className: " border-r border-t md:border-0",
       title: "On Time Delivery",
       value: "61%",
     },
     {
-      className: "md:!px-4 border-t md:border-0",
+      className: " border-t md:border-0",
       title: "Perfect Order rate",
       value: "58%",
     },
@@ -32,10 +32,10 @@ function Stats(props) {
   };
 
   return (
-    <div className="lg:flex items-center justify-between">
-      <div className="md:flex grid grid-cols-2 items-center justify-between md:divide-x md:gap-8">
+    <div className="flex flex-wrap items-center justify-between">
+      <div className="md:flex flex-wrap grid grid-cols-2 items-center justify-between lg:divide-x 2xl:gap-8 gap-4 w-full pb-4">
         {statsList.map((item, index) => (
-          <div className={`${item.className} p-4 md:p-0`} key={index}>
+          <div className={`${item.className}`} key={index}>
             <p className="text-sm">{item.title}</p>
             <h4 className="text-4xl font-bold">{item.value}</h4>
           </div>
@@ -49,7 +49,7 @@ function Stats(props) {
         placeholder="Stage 1- IDEA"
         value={value}
         popupHeight="220px"
-        cssClass="sm:!w-64 !w-full"
+        cssClass="md:!w-64 !w-full"
       />
     </div>
   );

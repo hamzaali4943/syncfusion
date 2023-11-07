@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -61,35 +61,37 @@ const Tasks = () => {
   ];
 
   return (
-    <TreeGridComponent
-      dataSource={orderData}
-      treeColumnIndex={0}
-      childMapping="subtasks"
-      height="315"
-    >
-      <ColumnsDirective>
-        <ColumnDirective field="taskName" headerText="Task Name" />
-        <ColumnDirective
-          field="assignee"
-          headerText="Assignee"
-          template={(props) => {
-            return (
-              <div className="flex items-center space-x-1">
-                <img
-                  className="h-8 w-8 rounded-full"
-                  src="https://www.svgrepo.com/show/382099/female-avatar-girl-face-woman-user-2.svg"
-                  alt=""
-                />{" "}
-                <span>{props.assignee}</span>
-              </div>
-            );
-          }}
-          width="180"
-        />
-        <ColumnDirective field="dueDate" headerText="Due Date" width="100" />
-        <ColumnDirective field="add" headerText="+" width="60" />
-      </ColumnsDirective>
-    </TreeGridComponent>
+    <div>
+      <TreeGridComponent
+        dataSource={orderData}
+        treeColumnIndex={0}
+        childMapping="subtasks"
+        height="315"
+      >
+        <ColumnsDirective>
+          <ColumnDirective field="taskName" headerText="Task Name" width="320" />
+          <ColumnDirective
+            field="assignee"
+            headerText="Assignee"
+            template={(props) => {
+              return (
+                <div className="flex items-center space-x-1">
+                  <img
+                    className="h-8 w-8 rounded-full"
+                    src="https://www.svgrepo.com/show/382099/female-avatar-girl-face-woman-user-2.svg"
+                    alt=""
+                  />{" "}
+                  <span>{props.assignee}</span>
+                </div>
+              );
+            }}
+            width="180"
+          />
+          <ColumnDirective field="dueDate" headerText="Due Date" width="100" />
+          <ColumnDirective field="add" headerText="+" width="60" />
+        </ColumnsDirective>
+      </TreeGridComponent>
+    </div>
   );
 };
 export default Tasks;

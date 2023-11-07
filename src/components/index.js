@@ -6,3 +6,4 @@ export { default as EditableWrapper } from "./editableWrapper";
 export { default as BreadCrumbs } from "./Breadcrumbs";
 export { default as SelectButton } from "./SelectButton";
 export { default as Tasks } from "./Tasks";
+export { default as EditableInput } from "./editableInput";

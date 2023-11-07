@@ -112,8 +112,8 @@ function App() {
         const offsetX = e.clientX - startX;
         const newWidth = ((initialWidth + offsetX) / containerWidth) * 100;
         const newWidth2 = 100 - newWidth;
-        column1.style.flex = `${newWidth} 0 auto`;
-        column2.style.flex = `${newWidth2} 0 auto`;
+        column1.style.flex = `${newWidth} 1 0 `;
+        column2.style.flex = `${newWidth2} 1 0 `;
       });
       document.addEventListener("mouseup", () => {
         isDragging = false;
@@ -140,7 +140,7 @@ function App() {
           background-color: #f0f0f0;
           border: 1px solid #ddd;
           overflow: auto;
-          min-width: 100px;
+          // min-width: 100px;
         }
 
         .resizable-divider {
@@ -170,12 +170,12 @@ function App() {
       </div> */}
       <div className="resizable-container">
         <div className="resizable-column" id="column1">
-          Column 1
+
         </div>
         <div className="resizable-divider"></div>
         <div className="resizable-column" id="column2">
-          {/* <Tabs tabItems={impactTabItems2} id="main" /> */}
-          column 2
+          <Tabs tabItems={impactTabItems2} id="main" />
+   
         </div>
       </div>
     </>

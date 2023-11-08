@@ -43,18 +43,9 @@ function App() {
   return (
     <>
       <style jsx>{`
-        .resizable-container {
-          display: flex;
-          height: 100vh;
-          overflow: hidden;
-        }
-
         .resizable-column {
           flex: 1;
-          padding: 20px;
-          background-color: #f0f0f0;
           border: 1px solid #ddd;
-          overflow: auto;
           min-width: 100px;
         }
 
@@ -64,12 +55,12 @@ function App() {
           background-color: #ddd;
         }
       `}</style>
-      <div className="resizable-container">
-        <div className="resizable-column bg-white" id="column1">
+      <div className="resizable-container flex sm:flex-row flex-col h-screen overflow-hidden">
+        <div className="p-2.5 overflow-auto resizable-column" id="column1">
           Column 1
         </div>
         <div className="resizable-divider"></div>
-        <div className="resizable-column bg-white" id="column2">
+        <div className="p-2.5 overflow-auto resizable-column h-full" id="column2">
           <Tabs tabItems={impactTabItems2} id="main" />
           {/* column 2 */}
         </div>

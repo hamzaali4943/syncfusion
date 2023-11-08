@@ -8,7 +8,6 @@ import {
   BreadCrumbs,
   Tasks,
 } from ".";
-import NewTargetData from "./newTargetData";
 
 function ImpactComp() {
   const [editable, setEditable] = useState(false);
@@ -33,7 +32,6 @@ function ImpactComp() {
       <div className="md:space-y-10 space-y-8">
         <BreadCrumbs editable={editable} />
         <Stats />
-        <NewTargetData editable={editable} />
         <Details editable={editable} />
         <div>
           <EditableWrapper

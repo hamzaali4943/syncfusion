@@ -1,24 +1,19 @@
 import React from "react";
 
-const EditableInput = ({ inputValue, editable, onChange }) => {
-  const handleChange = (e) => {
-    const newValue = e.target.value;
-    // onChange(newValue);
-    console.log("newValue", newValue);
-  };
+const EditableInput = ({ value, editable, onChange }) => {
 
   if (editable) {
     return (
       <input
         className="e-input"
         type="text"
-        value={inputValue}
+        value={value}
         onChange={onChange}
         placeholder="Type here..."
       />
     );
   } else {
-    return inputValue;
+    return value;
   }
 };
 

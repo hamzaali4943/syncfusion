@@ -1,27 +1,49 @@
 import { useState } from "react";
-import {
-  Details,
-  EditableWrapper,
-  Stats,
-  Tabs,
-  Targets,
-  BreadCrumbs,
-  Tasks,
-} from ".";
+import { Details, EditableWrapper, Stats, BreadCrumbs, Tasks } from ".";
+import EditableTable from "./editableTable";
+import CustomTabs from "./customTabs";
 
 function ImpactComp() {
   const [editable, setEditable] = useState(false);
   const [editTable, setEditTable] = useState(false);
+  const tabs = ["Summary", "Targets", "Chart"];
 
-  const targetTabContent = () => {
-    return <Targets editable={editTable} />;
+  const [data, setData] = useState([
+    {
+      id: 1,
+      name: "EBITDA",
+      value2023: "$26.000,00",
+      value2024: "$26.000,00",
+      value2025: "$26.000,00",
+      value2026: "$26.000,00",
+      value2027: "$26.000,00",
+    },
+    {
+      id: 2,
+      name: "Net FTE Decrease",
+      value2023: "-",
+      value2024: "-",
+      value2025: "-",
+      value2026: "-",
+      value2027: "-",
+    },
+  ]);
+
+  const handleEdit = (id, newValue, field) => {
+    console.log({ newValue });
+    const updatedData = data.map((item) =>
+      item.id === id ? { ...item, [field]: newValue } : item
+    );
+    setData(updatedData);
   };
 
-  const impactTabItems = [
-    { header: { text: "Targets" }, content: targetTabContent },
-    { header: { text: "Summary" }, content: "Coming Soon" },
-    { header: { text: "Chart" }, content: "Coming Soon" },
-  ];
+  const tabContents = {
+    Summary: "Coming Soon",
+    Targets: (
+      <EditableTable data={data} editable={editTable} handleEdit={handleEdit} />
+    ),
+    Chart: "Coming Soon",
+  };
 
   return (
     <div className="p-2 lg:p-4 relative">
@@ -52,7 +74,11 @@ function ImpactComp() {
             isExpand={false}
             isEdit={() => setEditTable(!editTable)}
           />
-          <Tabs tabItems={impactTabItems} id="impact" />
+          <CustomTabs
+            tabs={tabs}
+            defaultTab="Targets"
+            tabContents={tabContents}
+          />
         </div>
       </div>
     </div>

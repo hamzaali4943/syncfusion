@@ -42,17 +42,36 @@ function App() {
   }, []);
   return (
     <>
-      <div className="flex md:flex-row flex-col overflow-hidden h-screen bg-white">
-        <div
-          className="flex-1 p-2 border border-[#ddd] overflow-auto"
-          id="column1"
-        ></div>
-        <div className="resizable-divider w-2 cursor-col-resize bg-[#ddd]"></div>
-        <div
-          className="flex-1 p-2 border border-[#ddd] overflow-auto"
-          id="column2"
-        >
+      <style jsx>{`
+        .resizable-container {
+          display: flex;
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        .resizable-column {
+          flex: 1;
+          padding: 20px;
+          background-color: #f0f0f0;
+          border: 1px solid #ddd;
+          overflow: auto;
+          min-width: 100px;
+        }
+
+        .resizable-divider {
+          min-width: 8px;
+          cursor: col-resize;
+          background-color: #ddd;
+        }
+      `}</style>
+      <div className="resizable-container">
+        <div className="resizable-column" id="column1">
+          Column 1
+        </div>
+        <div className="resizable-divider"></div>
+        <div className="resizable-column" id="column2">
           <Tabs tabItems={impactTabItems2} id="main" />
+          {/* column 2 */}
         </div>
       </div>
     </>

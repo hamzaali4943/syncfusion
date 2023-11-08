@@ -3,6 +3,7 @@ import { RadioButtonComponent } from "@syncfusion/ej2-react-buttons";
 import { TextBoxComponent } from "@syncfusion/ej2-react-inputs";
 const Details = ({ editable }) => {
   const [selectedOption, setSelectedOption] = useState("Owner");
+  const [editTextarea, setEditTextarea] = useState(false);
   const implementationList = [
     {
       title: "Type",
@@ -64,14 +65,23 @@ const Details = ({ editable }) => {
   return (
     <div>
       <div className="flex items-center space-x-1">
-        <img src="../../lock.svg" alt="lock" className="-ml-1.5" />
+        <img
+          src={
+            editTextarea
+              ? "https://cdn-icons-png.flaticon.com/128/798/798131.png"
+              : "../../lock.svg"
+          }
+          alt="lock"
+          className={`${editTextarea ? ' w-5 mr-2' : '-ml-1.5'} cursor-pointer`}
+          onClick={() => setEditTextarea(!editTextarea)}
+        />
         <h2 className="text-2xl tracking-wide text-gray-100 font-light">
           Details
         </h2>
       </div>
       <div className="grid xl:grid-cols-2 gris-cols-1 gap-5 py-4">
         <div>
-          {editable ? (
+          {editTextarea ? (
             <TextBoxComponent
               multiline={true}
               rows={50}

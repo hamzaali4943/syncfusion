@@ -65,11 +65,11 @@ function App() {
         }
       `}</style>
       <div className="resizable-container">
-        <div className="resizable-column" id="column1">
+        <div className="resizable-column bg-white" id="column1">
           Column 1
         </div>
         <div className="resizable-divider"></div>
-        <div className="resizable-column" id="column2">
+        <div className="resizable-column bg-white" id="column2">
           <Tabs tabItems={impactTabItems2} id="main" />
           {/* column 2 */}
         </div>
